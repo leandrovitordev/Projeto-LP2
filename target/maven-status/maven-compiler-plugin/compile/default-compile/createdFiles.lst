@@ -1,0 +1,9 @@
+projeto\controller\Tarefacontroller.class
+projeto\model\StatusTarefa.class
+projeto\exception\TarefaNaoEncontradaException.class
+projeto\repository\TarefaRepository$1.class
+projeto\repository\TarefaRepository.class
+projeto\service\TarefaService.class
+projeto\model\PrioridadeTarefa.class
+projeto\model\Tarefa.class
+projeto\ProjetoApplication.class
