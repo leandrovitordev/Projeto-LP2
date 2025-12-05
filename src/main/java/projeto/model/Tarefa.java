@@ -1,27 +1,24 @@
 package projeto.model;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
-/**
- * Esta é a classe Modelo (Model) que representa
- * a estrutura de dados de uma Tarefa.
- */
 public class Tarefa {
 
     private Long id;
+
+    @NotBlank(message = "O título da tarefa é obrigatório")
     private String titulo;
+
     private StatusTarefa status;
+
+    @NotNull(message = "A prioridade é obrigatória (ALTA, MEDIA, BAIXA)")
     private PrioridadeTarefa prioridade;
+
     private String responsavel;
 
-    /**
-     * Construtor vazio.
-     * Necessário para a biblioteca Jackson (JSON) funcionar corretamente.
-     */
     public Tarefa() {
     }
-    
-    // --- Getters e Setters ---
-    // Métodos públicos necessários para que o Jackson
-    // possa ler e escrever os dados desta classe.
+
 
     public Long getId() {
         return id;

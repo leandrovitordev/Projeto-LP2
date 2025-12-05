@@ -1,7 +1,13 @@
 [ {
-  "id" : 1,
-  "titulo" : "Entregar o projeto de LP2!",
+  "id" : 6,
+  "titulo" : "Enviar tarefa",
   "status" : "PENDENTE",
+  "prioridade" : "MEDIA",
+  "responsavel" : "Leandro Vitor"
+}, {
+  "id" : 7,
+  "titulo" : "Gravar vídeo do Checkpoint",
+  "status" : "CONCLUIDA",
   "prioridade" : "ALTA",
   "responsavel" : "Leandro"
 } ]

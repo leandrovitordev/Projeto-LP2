@@ -6,6 +6,9 @@ import projeto.model.Tarefa; // Import corrigido
 import projeto.repository.TarefaRepository; // Import corrigido
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import projeto.model.PrioridadeTarefa;
+import projeto.model.StatusTarefa;
+import java.util.stream.Collectors;
 
 import java.util.List;
 import java.util.Optional;
@@ -20,9 +23,17 @@ public class TarefaService {
         this.tarefaRepository = tarefaRepository;
     }
 
-    public List<Tarefa> listarTodas() {
-        return tarefaRepository.findAll();
-    }
+
+public List<Tarefa> listarTodas(StatusTarefa status, PrioridadeTarefa prioridade) {
+    // 1. Busca todas as tarefas do arquivo JSON
+    List<Tarefa> todas = tarefaRepository.findAll();
+
+    // 2. Aplica a filtragem usando Java Streams
+    return todas.stream()
+            .filter(t -> status == null || t.getStatus() == status)
+            .filter(t -> prioridade == null || t.getPrioridade() == prioridade)
+            .collect(Collectors.toList());
+}
 
     public Tarefa buscarPorId(Long id) {
         return tarefaRepository.findById(id)
